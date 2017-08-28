@@ -1,0 +1,142 @@
+nginx主要的结构体：
+
+ngx_cycle_s nginx主要的结构体
+
+
+ngx_pool_t
+
+
+模块+配置
+
+
+ngx_module_s 模块
+ngx_command_s 命令设置
+ngx_conf_s 配置命令的属性
+
+
+
+
+
+
+ngx_core_module_t 核心模块的上下文结构
+
+ngx_core_conf_t  配置的属性值存储
+
+
+
+conf_ctx_t
+
+
+基本机构
+ngx_pool_s 内存池
+ngx_array_t 数组的创建
+ngx_quque_t  队列 链表
+
+hash
+
+
+
+
+
+
+
+
+配置：
+模块上下文里面的create_conf--->获取一个结构体、然后构造存储配置--->函数解析---->解析token--》间接循环调用--》set赋值
+
+--》最后的数据在ngx_.._conf_t 内
+
+
+
+请求：
+
+监听结构体
+
+连接结构体
+
+事件结构体
+
+请求结构体
+
+
+
+
+周期结构体cycle  --》 配置 conf --》 
+
+
+master工作--》fork出work
+
+channel socketpair 通信
+
+
+work --》 连接 --》 事件
+
+
+
+事件的循环机制是怎样的
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2、具体配置、
+
+最基本的结构都在ngx_core.h里面
+
+
+
+具体分析的某一模块
+
+内存池
+数组 -- 链表
+通信 
+连接池
+token处理
+hash表
+红黑树
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
